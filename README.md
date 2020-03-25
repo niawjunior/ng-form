@@ -11,9 +11,3 @@
 - If, your testing passed and no conflict. you can push the code to the development branch `git push origin 'dev branch'`
 - And then, you can create a pull request for merge development with the master branch
 - Finally, Compare development & master branch if no conflict. And then please review code (comment) and merged
-
-# http://localhost:4200/#/subscribe
-# http://localhost:4200/#/download
-# http://localhost:4200/#/form3
-# http://localhost:4200/#/form4
-# http://localhost:4200/#/nordics
