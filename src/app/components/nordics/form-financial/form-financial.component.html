@@ -1,0 +1,15 @@
+<h1 nxHeadline="subsection-small" class="t-primary-action-bright">Financial Data</h1>
+<div [formGroup]="financialForm">
+  <nx-formfield nxLabel="Turn Over *">
+    <input type="text" nxInput name="turnover" formControlName="turnover" required/>
+    <nx-message nxContext="error" nxFormfieldError>
+        Your turn over is missing.
+    </nx-message>
+  </nx-formfield>
+  <nx-formfield nxLabel="Number Of Employees *">
+    <input type="number" nxInput name="number_of_employees" formControlName="number_of_employees" required/>
+    <nx-message nxContext="error" nxFormfieldError>
+      Your number of employees is missing.
+    </nx-message>
+  </nx-formfield>
+</div>

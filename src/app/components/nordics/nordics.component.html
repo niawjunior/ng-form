@@ -1,0 +1,59 @@
+<form [formGroup]="nordics" (ngSubmit)="onSubmit()" class='form-example'>
+  <div nxRow>
+    <div nxCol="12,12,6">
+      <app-form-company [companyForm]="nordics.get('company')"></app-form-company>
+    </div>
+    <div nxCol="12,12,6">
+      <app-form-financial [financialForm]="nordics.get('financial')"></app-form-financial>
+      <h6 nxCopytext='large'>Fill in if your are using an insurance intermediary;</h6>
+      <h6 nxCopytext='large' class="u-margin-bottom-lg">leave blank if same as company details</h6>
+      <app-form-contact [contactForm]="nordics.get('contact')"></app-form-contact>
+      <h6 nxCopytext='large'>Are you an existing Allianz Cyber policyholder? *</h6>
+      <nx-radio-group name="policyholder" formControlName="policyholder">
+        <div class="u-margin-left-lg">
+          <div nxRow>
+            <nx-radio nxValue="Yes" class="u-margin-top-md">Yes</nx-radio>
+            <nx-radio nxValue="No" class="u-margin-top-md">No</nx-radio>
+          </div>
+        </div>
+      </nx-radio-group>
+      <h6 nxCopytext='large' class="u-margin-top-md">Are you existing Checkpoint client? *</h6>
+      <nx-radio-group name="checkpoint" formControlName="checkpoint">
+        <div class="u-margin-left-lg">
+          <div nxRow>
+            <nx-radio nxValue="Yes" class="u-margin-top-md">Yes</nx-radio>
+            <nx-radio nxValue="No" class="u-margin-top-md">No</nx-radio>
+          </div>
+        </div>
+      </nx-radio-group>
+      <h6 *ngIf="select_all_no" nxCopytext='large' class="u-margin-top-md">If you selected 'No' can you please visit
+        this <nx-link><a href='#' target="_blank">CMS editable link?</a></nx-link>
+      </h6>
+    </div>
+  </div>
+  <div nxRow class="u-margin-top-lg">
+    <div nxCol="12">
+      <app-form-question *ngIf="show_question" [questionForm]="nordics.get('question')"></app-form-question>
+      <br>
+      <h1 nxHeadline="subsection-small" class="t-primary-action-bright u-margin-top-lg">Opt-ins</h1>
+      <nx-checkbox name="opt" formControlName='opt'>
+        <h6 nxCopytext='large'>
+          BY COMPLETING THIS FORM YOU AGREE THAT WE SHARE YOUR DATA IN THIS FORM WITH CHECK POINT
+        </h6>
+        <h6 nxCopytext='large'>
+          SOFTWARE TECHNOLOGIES LTD. FOR THE PURPOSE OF CARRYING OUT A RISK ASSESSMENT. PLEASE READ OUR
+        </h6>
+        <h6 nxCopytext='large'>
+          PRIVACY POLICY TO FIND OUT HOW WE USE YOUR DATA AND READ OUR TERMS AND CONDITIONS. BY SUBMITTING
+        </h6>
+        <h6 nxCopytext='large'>
+          THIS FORM, YOU AGREE THAT YOU HAVE READ AND UNDERSTOOD THE TERMS AND YOU AGREE TO THEM.
+        </h6>
+      </nx-checkbox>
+      <br>
+      <re-captcha formControlName="captcha" name="captcha" required siteKey="6LcYp3sUAAAAAKUHFjj75W0T-c5Fp5rGg7EY1WHD"></re-captcha>
+    </div>
+  </div>
+  <hr class="u-margin-top-lg">
+  <button nxButton="primary" class="u-margin-top-lg" [disabled]="disable_submit_button">SUBMIT</button>
+</form>

@@ -1,0 +1,96 @@
+<h1 nxHeadline="subsection-small" class="t-primary-action-bright">Additional Questions</h1>
+<div [formGroup]="questionForm">
+
+  <h6 nxCopytext='large'>
+    The organization confirms that it does not process, collect or store neither: *
+  </h6>
+  <ul nxList class="u-margin-top-lg">
+    <li>
+      <h6 nxCopytext='small'>more than 500,000 records of Personally Identifiable Information (PII), nor</h6>
+    </li>
+    <li>
+      <h6 nxCopytext='small'>any PII/PHI records of United States citizens.</h6>
+    </li>
+  </ul>
+
+  <nx-radio-group name="q1" formControlName="q1">
+    <div class="u-margin-left-lg">
+      <div nxRow>
+        <nx-radio nxValue="Yes" class="u-margin-top-md">Yes</nx-radio>
+        <nx-radio nxValue="No" class="u-margin-top-md">No</nx-radio>
+      </div>
+    </div>
+  </nx-radio-group>
+
+  <h6 nxCopytext='large' class="u-margin-top-lg">
+    The organization confirms that has formalized and at least annually tested processes: *
+  </h6>
+  <ul nxList class="u-margin-top-lg">
+    <li>
+      <h6 nxCopytext='small'>for restoring critical data from backup, and</h6>
+    </li>
+    <li>
+      <h6 nxCopytext='small'>for at least one of the following: Business Continuity Plan, Disaster Recovery Plan,
+        Incident Response Plan.</h6>
+    </li>
+  </ul>
+  <nx-radio-group name="q2" formControlName="q2">
+    <div class="u-margin-left-lg">
+      <div nxRow>
+        <nx-radio nxValue="Yes" class="u-margin-top-md">Yes</nx-radio>
+        <nx-radio nxValue="No" class="u-margin-top-md">No</nx-radio>
+      </div>
+    </div>
+  </nx-radio-group>
+
+  <h6 nxCopytext='large' class="u-margin-top-lg u-margin-bottom-lg">
+    Please confirm that the organization adheres to the data privacy and data security standards relevant for their
+    industry and geographical scope, such as: GDPR or other privacy regulation, PCI DSS, ISO 27001, NIST, etc. *
+  </h6>
+  <nx-radio-group name="q3" formControlName="q3">
+    <div class="u-margin-left-lg">
+      <div nxRow>
+        <nx-radio nxValue="Yes" class="u-margin-top-md">Yes</nx-radio>
+        <nx-radio nxValue="No" class="u-margin-top-md">No</nx-radio>
+      </div>
+    </div>
+  </nx-radio-group>
+
+  <h6 nxCopytext='large' class="u-margin-top-lg u-margin-bottom-lg">
+    Please confirm that all critical and sensitive data is always logically or physically segregated from the rest of
+    the network and that the systems and applications are kept up to date through documented patching processes. *
+  </h6>
+  <nx-radio-group name="q4" formControlName="q4">
+    <div class="u-margin-left-lg">
+      <div nxRow>
+        <nx-radio nxValue="Yes" class="u-margin-top-md">Yes</nx-radio>
+        <nx-radio nxValue="No" class="u-margin-top-md">No</nx-radio>
+      </div>
+    </div>
+  </nx-radio-group>
+
+  <h6 nxCopytext='large' class="u-margin-top-lg">
+    The organization confirms that it in the past three years has not suffered any: *
+  </h6>
+  <ul nxList class="u-margin-top-lg">
+    <li>
+      <h6 nxCopytext='small'>successful cyber-attacks (including ransomware)</h6>
+    </li>
+    <li>
+      <h6 nxCopytext='small'>business interruption events caused by a cyber attack</h6>
+    </li>
+    <li>
+      <h6 nxCopytext='small'>unauthorized disclosures of personal information (data breach)</h6>
+    </li>
+  </ul>
+
+  <nx-radio-group name="q5" formControlName="q5">
+    <div class="u-margin-left-lg">
+      <div nxRow>
+        <nx-radio nxValue="Yes" class="u-margin-top-md">Yes</nx-radio>
+        <nx-radio nxValue="No" class="u-margin-top-md">No</nx-radio>
+      </div>
+    </div>
+  </nx-radio-group>
+
+</div>

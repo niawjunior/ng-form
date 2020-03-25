@@ -1,0 +1,15 @@
+<h1 nxHeadline="subsection-small" class="t-primary-action-bright">Contact Details</h1>
+<div [formGroup]="contactForm">
+  <nx-formfield nxLabel="Email Address">
+    <input type="email" nxInput name="email" formControlName="email" />
+  </nx-formfield>
+  <nx-formfield nxLabel="Phone Number">
+    <input type="tel" nxInput name="phone" formControlName="phone" />
+  </nx-formfield>
+  <nx-formfield nxLabel="First Name">
+    <input type="text" nxInput name="first_name" formControlName="first_name" />
+  </nx-formfield>
+  <nx-formfield nxLabel="Last Name">
+    <input type="text" nxInput name="last_name" formControlName="last_name" />
+  </nx-formfield>
+</div>

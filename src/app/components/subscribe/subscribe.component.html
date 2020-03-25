@@ -1,0 +1,55 @@
+<form [formGroup]="subscribe" (ngSubmit)="onSubmit()" class='form-example'>
+  <div nxRow nxRowJustify="center">
+    <div nxCol="12,12,6">
+      <nx-formfield nxLabel="Email Address*">
+        <input nxInput required formControlName="email" name='email' type="email" />
+        <nx-message nxContext="error" nxFormfieldError>
+          Your email is missing.
+        </nx-message>
+      </nx-formfield>
+      <nx-formfield nxLabel="First Name*">
+        <input nxInput required formControlName="firstName" name='firstName' type="text" />
+        <nx-message nxContext="error" nxFormfieldError>
+          Your first name is missing.
+        </nx-message>
+      </nx-formfield>
+      <nx-formfield nxLabel="Last Name*">
+        <input nxInput required formControlName="lastName" name='lastName' type="text" />
+        <nx-message nxContext="error" nxFormfieldError>
+          Your last last name is missing.
+        </nx-message>
+      </nx-formfield>
+      <nx-formfield nxLabel="Company">
+        <input nxInput formControlName="company" name='company' type="text" />
+      </nx-formfield>
+      <nx-formfield nxLabel="Country*">
+        <input nxInput required formControlName="country" name='country' type="text" />
+        <nx-message nxContext="error" nxFormfieldError>
+          Your country is missing.
+        </nx-message>
+      </nx-formfield>
+      <nx-formfield nxLabel="Position">
+        <input nxInput formControlName="position" name='position' type="text" />
+      </nx-formfield>
+      <nx-checkbox nxInput required formControlName="checkbox" name='checkbox'>Yes, please sign me up to eUpdate, the
+        AGCS Newsletter</nx-checkbox>
+      <br>
+      <re-captcha formControlName="captcha" name="captcha" required siteKey="6LcYp3sUAAAAAKUHFjj75W0T-c5Fp5rGg7EY1WHD"></re-captcha>
+      <br>
+      <button class="btn" type="submit" nxButton="block primary" [disabled]="!subscribe.valid || !subscribe.value.checkbox || !subscribe.value.captcha">
+        <nx-icon name='product-mail'></nx-icon> Subscribe to list
+      </button>
+    </div>
+  </div>
+</form>
+
+<ng-template #ngIfModalBody>
+  <div class='u-text-center'>
+    <h3 nxHeadline='subsection-medium'>{{ modalTextTitle }}</h3>
+    <h4 nxCopytext="medium">{{ modalTextBody }}</h4>
+    <br>
+    <nx-icon *ngIf="modalSuccess" name="check" size='xl' class="t-process-success"></nx-icon>
+    <nx-icon *ngIf="modalError" name="close" size='xl' class="t-process-error"></nx-icon>
+  </div>
+</ng-template>
+<nx-modal nxSize="fixed" (nxClose)="onBack()" [nxBody]="ngIfModalBody" [nxShowCloseIcon]="true" *ngIf="showModal"></nx-modal>

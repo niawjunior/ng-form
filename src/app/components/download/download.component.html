@@ -1,0 +1,83 @@
+<div class="top-bar">
+  <div nxRow nxRowJustify="center" class="box">
+    <div nxCol="12,12,3">
+      <div nxRow nxRowJustify="center">
+        <figure nxFigure><img id="book" src="../../../assets/book.png" alt="book" /></figure>
+      </div>
+    </div>
+    <div nxCol="12,12,9">
+      <h3 class="u-margin-top-lg text-head">
+        <strong>Considering Tidemark?</strong>
+      </h3>
+      <h3 class="text-head">
+        <strong>Find a Better Solution for You.</strong>
+      </h3>
+      <br />
+      <h6 class="t-direct-orange text-head">
+        <strong>Free Report: Corporate Performance Management Value Matrix</strong>
+      </h6>
+      <p nxCopytext="large" class="u-margin-top-lg">
+        Are you looking as the right solution? Find alternative to
+        Tidemark-especially one that can support your current and future
+        planning modeling, forecasting, and reporting needs.
+      </p>
+      <p nxCopytext="large" class="u-margin-top-lg">
+        See how Nucleus evaluates the Performance of CPM vendors through direct
+        customer reviews. Then use the report to determine which providers
+        satisfy customer similar to you.
+      </p>
+      <h6 class="u-margin-top-lg"><strong>Key takeaways include:</strong></h6>
+      <ul nxList class="u-margin-top-lg">
+        <li nxListIcon="check">2016 leaders in CPM</li>
+        <li nxListIcon="check">CPM Value Matrix 2016</li>
+        <li nxListIcon="check">
+          Critical Capabilities for users experience max value from their CPM
+        </li>
+      </ul>
+      <button nxButton="emphasis" (click)="popup()">DOWNLOAD NOW</button>
+    </div>
+  </div>
+</div>
+<ng-template #ngIfModalBody>
+  <form [formGroup]="download" (ngSubmit)="onSubmit()" class="form-example">
+    <h3 nxHeadline="subsection-medium" class="u-text-center">
+      <strong>GET YOUR WHITE PAPER NOW</strong>
+    </h3>
+    <h6 nxHeadline="subsection-small" class="u-text-center">
+      To learn with vendors are 2016 leaders in CPM.
+    </h6>
+    <div nxRow>
+      <div nxCol="12,12,6">
+        <nx-formfield nxLabel="First Name">
+          <input nxInput name="firstName" formControlName="firstName" />
+        </nx-formfield>
+      </div>
+      <div nxCol="12,12,6">
+        <nx-formfield nxLabel="Email Address">
+          <input nxInput name="email" formControlName="email" />
+        </nx-formfield>
+      </div>
+    </div>
+    <div nxRow>
+      <div nxCol="12,12,6">
+        <nx-formfield nxLabel="Country">
+          <input nxInput name="country" formControlName="country" />
+        </nx-formfield>
+      </div>
+      <div nxCol="12,12,6">
+        <nx-formfield nxLabel="Company">
+          <input nxInput name="company" formControlName="company" />
+        </nx-formfield>
+      </div>
+    </div>
+    <nx-checkbox name="checkbox" formControlName="checkbox">Subscribe to our Blog</nx-checkbox>
+    <div nxRow nxRowJustify="center">
+      <div nxCol="12,12,4">
+        <button nxButton="emphasis block" type="submit" class="u-margin-top-md" [disabled]="!download.valid || !download.value.checkbox">
+          SUBMIT
+        </button>
+      </div>
+    </div>
+  </form>
+</ng-template>
+<nx-modal nxSize="fixed" (nxClose)="onBack()" [nxBody]="ngIfModalBody" [nxShowCloseIcon]="true" *ngIf="show_popup"></nx-modal>

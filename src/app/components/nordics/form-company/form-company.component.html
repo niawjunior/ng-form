@@ -1,0 +1,60 @@
+<h1 nxHeadline="subsection-small" class="t-primary-action-bright">Company Information</h1>
+<div [formGroup]="companyForm">
+  <nx-formfield nxLabel="Company Name *">
+    <input nxInput name="company" formControlName="company" required/>
+    <nx-message nxContext="error" nxFormfieldError>
+      Your company is missing.
+    </nx-message>
+  </nx-formfield>
+  <nx-formfield nxLabel="Website (If Available)">
+    <input nxInput name="website" formControlName="website" />
+  </nx-formfield>
+  <nx-formfield nxLabel="Street, NR. *">
+    <input nxInput name="street" formControlName="street" required/>
+    <nx-message nxContext="error" nxFormfieldError>
+      Your street is missing.
+    </nx-message>
+  </nx-formfield>
+  <nx-formfield nxLabel="Zip Code *">
+    <input nxInput name="zip" formControlName="zip" required/>
+    <nx-message nxContext="error" nxFormfieldError>
+      Your zip code is missing.
+    </nx-message>
+  </nx-formfield>
+  <nx-formfield nxLabel="City *">
+    <input nxInput name="city" formControlName="city" required/>
+    <nx-message nxContext="error" nxFormfieldError>
+      Your city is missing.
+    </nx-message>
+  </nx-formfield>
+  <nx-formfield nxLabel="Country">
+    <input nxInput name="country" formControlName="country"/>
+  </nx-formfield>
+  <nx-formfield nxLabel="Industry *">
+    <nx-dropdown name="industry" formControlName="industry" required>
+      <nx-dropdown-item nxValue=''>Please select</nx-dropdown-item>
+      <nx-dropdown-item nxValue='BMW'>B</nx-dropdown-item>
+      <nx-dropdown-item nxValue='Audi'>A</nx-dropdown-item>
+      <nx-dropdown-item nxValue='Volvo'>V</nx-dropdown-item>
+      <nx-dropdown-item nxValue='Mini'>M</nx-dropdown-item>
+    </nx-dropdown>
+    <nx-message nxContext="error" nxFormfieldError>
+      Your industry is missing.
+    </nx-message>
+  </nx-formfield>
+  <nx-formfield nxLabel="Industry Details">
+    <input nxInput name="industry_details" formControlName="industry_details" />
+  </nx-formfield>
+  <nx-formfield nxLabel="Email Address *">
+    <input type="email" nxInput name="email" formControlName="email" required/>
+    <nx-message nxContext="error" nxFormfieldError>
+      Your email is missing.
+    </nx-message>
+  </nx-formfield>
+  <nx-formfield nxLabel="Phone Number *">
+    <input type="tel" nxInput name="phone" formControlName="phone" required/>
+    <nx-message nxContext="error" nxFormfieldError>
+      Your phone number is missing.
+    </nx-message>
+  </nx-formfield>
+</div>
